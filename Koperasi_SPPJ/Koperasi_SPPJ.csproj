@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C8EE912-88FA-4AC4-8E47-08CA3629BF63}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Koperasi_SPPJ</RootNamespace>
+    <AssemblyName>Koperasi_SPPJ</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmbilAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmbilAction.Designer.cs">
+      <DependentUpon>AmbilAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BayarAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BayarAction.Designer.cs">
+      <DependentUpon>BayarAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Beranda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Beranda.Designer.cs">
+      <DependentUpon>Beranda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pinjam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pinjam.Designer.cs">
+      <DependentUpon>Pinjam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PinjamAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PinjamAction.Designer.cs">
+      <DependentUpon>PinjamAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrasi.Designer.cs">
+      <DependentUpon>Registrasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Simpan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simpan.Designer.cs">
+      <DependentUpon>Simpan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpanAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpanAction.Designer.cs">
+      <DependentUpon>SimpanAction.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AmbilAction.resx">
+      <DependentUpon>AmbilAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BayarAction.resx">
+      <DependentUpon>BayarAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Beranda.resx">
+      <DependentUpon>Beranda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pinjam.resx">
+      <DependentUpon>Pinjam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PinjamAction.resx">
+      <DependentUpon>PinjamAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Registrasi.resx">
+      <DependentUpon>Registrasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simpan.resx">
+      <DependentUpon>Simpan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpanAction.resx">
+      <DependentUpon>SimpanAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
