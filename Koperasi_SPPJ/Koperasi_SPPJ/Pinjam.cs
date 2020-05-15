@@ -21,10 +21,10 @@ namespace Koperasi_SPPJ
             load_table();
         }
 
-        void load_table()
+        public void load_table()
         {
             var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
-            var cmd = new MySqlCommand("SELECT status, tgl_pinjam, jml_pinjam, saldo from pinjam where id_user = " + idu + "", conn);
+            var cmd = new MySqlCommand("SELECT status AS Status, tgl_pinjam AS Date, jml_pinjam AS Amount, saldo AS Saldo from pinjam where id_user = " + idu + "", conn);
 
             try
             {
@@ -52,16 +52,14 @@ namespace Koperasi_SPPJ
 
         private void btPinjam_Click(object sender, EventArgs e)
         {
-            PinjamAction p = new PinjamAction(idu);
+            PinjamAction p = new PinjamAction(idu, this);
             p.Show();
-            this.Close();
         }
 
         private void btBayar_Click(object sender, EventArgs e)
         {
-            BayarAction b = new BayarAction(idu);
+            BayarAction b = new BayarAction(idu, this);
             b.Show();
-            this.Close();
         }
 
         private void btKembali_Click_1(object sender, EventArgs e)

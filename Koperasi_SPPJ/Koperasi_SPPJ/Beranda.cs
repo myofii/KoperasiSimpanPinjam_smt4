@@ -51,5 +51,10 @@ namespace Koperasi_SPPJ
         {
             Application.Exit();
         }
+
+        private void Beranda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

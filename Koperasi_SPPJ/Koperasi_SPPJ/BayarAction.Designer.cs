@@ -36,51 +36,63 @@
             // 
             // btBayar
             // 
-            this.btBayar.Location = new System.Drawing.Point(229, 105);
+            this.btBayar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btBayar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btBayar.ForeColor = System.Drawing.Color.Black;
+            this.btBayar.Location = new System.Drawing.Point(247, 133);
+            this.btBayar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btBayar.Name = "btBayar";
-            this.btBayar.Size = new System.Drawing.Size(75, 23);
+            this.btBayar.Size = new System.Drawing.Size(75, 29);
             this.btBayar.TabIndex = 10;
-            this.btBayar.Text = "Bayar";
-            this.btBayar.UseVisualStyleBackColor = true;
+            this.btBayar.Text = "Ok";
+            this.btBayar.UseVisualStyleBackColor = false;
             this.btBayar.Click += new System.EventHandler(this.btBayar_Click);
             // 
             // txtJml
             // 
-            this.txtJml.Location = new System.Drawing.Point(289, 51);
+            this.txtJml.Location = new System.Drawing.Point(247, 66);
+            this.txtJml.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtJml.Name = "txtJml";
-            this.txtJml.Size = new System.Drawing.Size(100, 22);
+            this.txtJml.Size = new System.Drawing.Size(100, 28);
             this.txtJml.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 51);
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(104, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 17);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Jumlah yang ingin dibayar";
+            this.label1.Text = "Input the amount";
             // 
             // btKembali
             // 
-            this.btKembali.Location = new System.Drawing.Point(125, 105);
+            this.btKembali.BackColor = System.Drawing.Color.SkyBlue;
+            this.btKembali.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btKembali.ForeColor = System.Drawing.Color.Black;
+            this.btKembali.Location = new System.Drawing.Point(143, 133);
+            this.btKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btKembali.Name = "btKembali";
-            this.btKembali.Size = new System.Drawing.Size(75, 23);
+            this.btKembali.Size = new System.Drawing.Size(75, 29);
             this.btKembali.TabIndex = 11;
-            this.btKembali.Text = "Kembali";
-            this.btKembali.UseVisualStyleBackColor = true;
+            this.btKembali.Text = "Back";
+            this.btKembali.UseVisualStyleBackColor = false;
             this.btKembali.Click += new System.EventHandler(this.btKembali_Click);
             // 
             // BayarAction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 168);
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(474, 210);
             this.Controls.Add(this.btKembali);
             this.Controls.Add(this.btBayar);
             this.Controls.Add(this.txtJml);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Bernard MT Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BayarAction";
-            this.Text = "BayarAction";
             this.ResumeLayout(false);
             this.PerformLayout();
 

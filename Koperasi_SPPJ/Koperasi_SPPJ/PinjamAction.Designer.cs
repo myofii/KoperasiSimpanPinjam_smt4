@@ -36,51 +36,63 @@
             // 
             // btPinjam
             // 
-            this.btPinjam.Location = new System.Drawing.Point(234, 104);
+            this.btPinjam.BackColor = System.Drawing.Color.SkyBlue;
+            this.btPinjam.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btPinjam.ForeColor = System.Drawing.Color.Black;
+            this.btPinjam.Location = new System.Drawing.Point(238, 136);
+            this.btPinjam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btPinjam.Name = "btPinjam";
-            this.btPinjam.Size = new System.Drawing.Size(75, 23);
+            this.btPinjam.Size = new System.Drawing.Size(75, 29);
             this.btPinjam.TabIndex = 7;
-            this.btPinjam.Text = "Pinjam";
-            this.btPinjam.UseVisualStyleBackColor = true;
+            this.btPinjam.Text = "Ok";
+            this.btPinjam.UseVisualStyleBackColor = false;
             this.btPinjam.Click += new System.EventHandler(this.btPinjam_Click);
             // 
             // txtJml
             // 
-            this.txtJml.Location = new System.Drawing.Point(289, 51);
+            this.txtJml.Location = new System.Drawing.Point(238, 70);
+            this.txtJml.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtJml.Name = "txtJml";
-            this.txtJml.Size = new System.Drawing.Size(100, 22);
+            this.txtJml.Size = new System.Drawing.Size(100, 28);
             this.txtJml.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 51);
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(110, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 17);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Jumlah yang ingin dipinjam";
+            this.label1.Text = "Input the amount";
             // 
             // btKembali
             // 
-            this.btKembali.Location = new System.Drawing.Point(130, 104);
+            this.btKembali.BackColor = System.Drawing.Color.SkyBlue;
+            this.btKembali.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btKembali.ForeColor = System.Drawing.Color.Black;
+            this.btKembali.Location = new System.Drawing.Point(130, 136);
+            this.btKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btKembali.Name = "btKembali";
-            this.btKembali.Size = new System.Drawing.Size(75, 23);
+            this.btKembali.Size = new System.Drawing.Size(75, 29);
             this.btKembali.TabIndex = 12;
-            this.btKembali.Text = "Kembali";
-            this.btKembali.UseVisualStyleBackColor = true;
+            this.btKembali.Text = "Back";
+            this.btKembali.UseVisualStyleBackColor = false;
             this.btKembali.Click += new System.EventHandler(this.btKembali_Click);
             // 
             // PinjamAction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 168);
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(474, 210);
             this.Controls.Add(this.btKembali);
             this.Controls.Add(this.btPinjam);
             this.Controls.Add(this.txtJml);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Bernard MT Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PinjamAction";
-            this.Text = "PinjamAction";
             this.ResumeLayout(false);
             this.PerformLayout();
 

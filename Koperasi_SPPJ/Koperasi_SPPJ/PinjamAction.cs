@@ -14,50 +14,59 @@ namespace Koperasi_SPPJ
     public partial class PinjamAction : Form
     {
         int idu;
-        public PinjamAction(int id)
+        Pinjam pin;
+        public PinjamAction(int id, Pinjam p)
         {
             InitializeComponent();
             idu = id;
+            pin = p;
         }
 
         private void btPinjam_Click(object sender, EventArgs e)
         {
-            int jml = Int32.Parse(txtJml.Text);
-            int saldo = 0;
-            var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
-            var cmd = new MySqlCommand("SELECT saldo from user where id_user = " + idu + "", conn);
-            conn.Open();
-            var r = cmd.ExecuteReader();
-            if (r.Read())
+            int jml = 0;
+            if (txtJml.Text != "")
             {
-                saldo = (int)r[0];
-                r.Close();
-            }
-            saldo -= jml;
-            var cmd1 = new MySqlCommand("UPDATE user set saldo = " + saldo + " where id_user = " + idu + "",conn);
-            var cmd2 = new MySqlCommand("", conn);
-            string query = string.Format("INSERT INTO pinjam (id_user, tgl_pinjam, jml_pinjam, status, saldo) "
-              + "VALUES ({0}, NOW(), {1}, 'PINJAM', {2})", new object[] {
+                jml = Int32.Parse(txtJml.Text);
+
+                int saldo = 0;
+                var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
+                var cmd = new MySqlCommand("SELECT saldo from user where id_user = " + idu + "", conn);
+                conn.Open();
+                var r = cmd.ExecuteReader();
+                if (r.Read())
+                {
+                    saldo = (int)r[0];
+                    r.Close();
+                }
+                saldo -= jml;
+                var cmd1 = new MySqlCommand("UPDATE user set saldo = " + saldo + " where id_user = " + idu + "", conn);
+                var cmd2 = new MySqlCommand("", conn);
+                string query = string.Format("INSERT INTO pinjam (id_user, tgl_pinjam, jml_pinjam, status, saldo) "
+                  + "VALUES ({0}, NOW(), {1}, 'CREDIT', {2})", new object[] {
                     idu,
                     jml,
                     saldo
-              });
-            cmd2.CommandText = query;
-            cmd1.ExecuteNonQuery();
-            cmd2.ExecuteNonQuery();
-            conn.Close();
+                  });
+                cmd2.CommandText = query;
+                cmd1.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
+                conn.Close();
 
-            MessageBox.Show("Berhasil dipinjam!!!");
+                pin.load_table();
 
-            Pinjam p = new Pinjam(idu);
-            p.Show();
-            this.Close();
+                MessageBox.Show("Berhasil dipinjam!!!");
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Inputkan jumlah uang yang ingin dipinjam!!");
+            }
         }
 
         private void btKembali_Click(object sender, EventArgs e)
         {
-            Pinjam p = new Pinjam(idu);
-            p.Show();
             this.Close();
         }
     }

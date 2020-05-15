@@ -36,51 +36,63 @@
             // 
             // txtJml
             // 
-            this.txtJml.Location = new System.Drawing.Point(289, 73);
+            this.txtJml.Location = new System.Drawing.Point(251, 87);
+            this.txtJml.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtJml.Name = "txtJml";
-            this.txtJml.Size = new System.Drawing.Size(100, 22);
+            this.txtJml.Size = new System.Drawing.Size(100, 28);
             this.txtJml.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 73);
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(109, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 17);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Jumlah yang ingin diambil";
+            this.label1.Text = "Input the amount";
             // 
             // btAmbil
             // 
-            this.btAmbil.Location = new System.Drawing.Point(253, 117);
+            this.btAmbil.BackColor = System.Drawing.Color.SkyBlue;
+            this.btAmbil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btAmbil.ForeColor = System.Drawing.Color.Black;
+            this.btAmbil.Location = new System.Drawing.Point(251, 142);
+            this.btAmbil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btAmbil.Name = "btAmbil";
-            this.btAmbil.Size = new System.Drawing.Size(75, 23);
+            this.btAmbil.Size = new System.Drawing.Size(75, 29);
             this.btAmbil.TabIndex = 4;
-            this.btAmbil.Text = "Ambil";
-            this.btAmbil.UseVisualStyleBackColor = true;
+            this.btAmbil.Text = "Ok";
+            this.btAmbil.UseVisualStyleBackColor = false;
             this.btAmbil.Click += new System.EventHandler(this.btAmbil_Click_1);
             // 
             // btKembali
             // 
-            this.btKembali.Location = new System.Drawing.Point(130, 117);
+            this.btKembali.BackColor = System.Drawing.Color.SkyBlue;
+            this.btKembali.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btKembali.ForeColor = System.Drawing.Color.Black;
+            this.btKembali.Location = new System.Drawing.Point(137, 142);
+            this.btKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btKembali.Name = "btKembali";
-            this.btKembali.Size = new System.Drawing.Size(75, 23);
+            this.btKembali.Size = new System.Drawing.Size(75, 29);
             this.btKembali.TabIndex = 5;
-            this.btKembali.Text = "Kembali";
-            this.btKembali.UseVisualStyleBackColor = true;
+            this.btKembali.Text = "Back";
+            this.btKembali.UseVisualStyleBackColor = false;
             this.btKembali.Click += new System.EventHandler(this.btKembali_Click);
             // 
             // AmbilAction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 168);
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(474, 210);
             this.Controls.Add(this.btKembali);
             this.Controls.Add(this.btAmbil);
             this.Controls.Add(this.txtJml);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Bernard MT Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AmbilAction";
-            this.Text = "AmbilAction";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -21,10 +21,10 @@ namespace Koperasi_SPPJ
             load_table();
         }
 
-        void load_table()
+        public void load_table()
         {
             var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
-            var cmd = new MySqlCommand("SELECT status, tgl_simpan, jml_simpan, saldo from simpan where id_user = " + idu + "", conn);
+            var cmd = new MySqlCommand("SELECT status AS Status, tgl_simpan AS Date, jml_simpan AS Amount, saldo AS Saldo from simpan where id_user = " + idu + "", conn);
 
             try
             {
@@ -52,16 +52,14 @@ namespace Koperasi_SPPJ
 
         private void btSimpan_Click(object sender, EventArgs e)
         {
-            SimpanAction s = new SimpanAction(idu);
+            SimpanAction s = new SimpanAction(idu, this);
             s.Show();
-            this.Close();
         }
 
         private void btAmbil_Click(object sender, EventArgs e)
         {
-            AmbilAction a = new AmbilAction(idu);
+            AmbilAction a = new AmbilAction(idu, this);
             a.Show();
-            this.Close();
         }
     }
 }

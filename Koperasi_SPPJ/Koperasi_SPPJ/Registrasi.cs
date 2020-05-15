@@ -22,32 +22,39 @@ namespace Koperasi_SPPJ
 
         private void btDaftar_Click(object sender, EventArgs e)
         {
-            var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
-            var cmd = new MySqlCommand("", conn);
+            if(txtNama.Text != "" | txtUsername.Text != "" | txtPassword.Text != "" | txtAlamat.Text != "" | txtNohp.Text != "")
+            {
+                var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
+                var cmd = new MySqlCommand("", conn);
 
-            var nama = txtNama.Text;
-            var u= txtUsername.Text;
-            var p = txtPassword.Text;
-            var alamat = txtAlamat.Text;
-            var nohp = txtNohp.Text;
-            
-            string query = string.Format("INSERT INTO user (username, password, nama_user, alamat, no_hp, saldo) "
-              + "VALUES ('{0}','{1}','{2}', '{3}', {4}, 0)", new object[] {
+                var nama = txtNama.Text;
+                var u = txtUsername.Text;
+                var p = txtPassword.Text;
+                var alamat = txtAlamat.Text;
+                var nohp = txtNohp.Text;
+
+                string query = string.Format("INSERT INTO user (username, password, nama_user, alamat, no_hp, saldo) "
+                  + "VALUES ('{0}','{1}','{2}', '{3}', {4}, 0)", new object[] {
                     u,
                     p,
                     nama,
                     alamat,
                     nohp
-              });
-            cmd.CommandText = query;
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+                  });
+                cmd.CommandText = query;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
 
-            MessageBox.Show("Registrasi Berhasil !!!");
-            
-            log.Show();
-            this.Close();
+                MessageBox.Show("Registrasi Berhasil !!!");
+
+                log.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Lengkapi Form Registrasi !!!");
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -59,6 +66,11 @@ namespace Koperasi_SPPJ
         private void Registrasi_Load(object sender, EventArgs e)
         {
             txtPassword.PasswordChar = '*';
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
