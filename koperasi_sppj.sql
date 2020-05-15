@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2020 at 08:41 PM
+-- Generation Time: May 15, 2020 at 06:51 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.29
 
@@ -41,9 +41,8 @@ CREATE TABLE `pinjam` (
 --
 
 INSERT INTO `pinjam` (`id_pinjam`, `id_user`, `tgl_pinjam`, `jml_pinjam`, `status`, `saldo`) VALUES
-(1, 1, '2020-05-09', 500000, 'PINJAM', 1000000),
-(2, 1, '2020-05-09', 500000, 'PINJAM', 500000),
-(3, 1, '2020-05-09', 1000000, 'BAYAR', 1500000);
+(14, 1, '2020-05-15', 500000, 'CREDIT', -500000),
+(15, 1, '2020-05-15', 200000, 'PAY', -300000);
 
 -- --------------------------------------------------------
 
@@ -65,9 +64,8 @@ CREATE TABLE `simpan` (
 --
 
 INSERT INTO `simpan` (`id_simpan`, `id_user`, `tgl_simpan`, `jml_simpan`, `status`, `saldo`) VALUES
-(1, 1, '2020-05-09', 1000000, 'SIMPAN', 1000000),
-(2, 1, '2020-05-09', 500000, 'AMBIL', 500000),
-(3, 1, '2020-05-09', 1000000, 'SIMPAN', 1500000);
+(11, 1, '2020-05-15', 1000000, 'DEBET', 1000000),
+(12, 1, '2020-05-15', 200000, 'WITHDRAW', 800000);
 
 -- --------------------------------------------------------
 
@@ -82,15 +80,16 @@ CREATE TABLE `user` (
   `nama_user` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `no_hp` int(11) NOT NULL,
-  `saldo` int(10) NOT NULL
+  `saldo_sp` int(10) NOT NULL,
+  `saldo_pj` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `nama_user`, `alamat`, `no_hp`, `saldo`) VALUES
-(1, 'yofi', 'yofi', 'Muhammad Yofi Indrawan', 'Jl. Siak', 12345, 1500000);
+INSERT INTO `user` (`id_user`, `username`, `password`, `nama_user`, `alamat`, `no_hp`, `saldo_sp`, `saldo_pj`) VALUES
+(1, 'yofi', 'yofi', 'Muhammad Yofi Indrawan', 'Jl. Siak', 12345, 800000, -300000);
 
 --
 -- Indexes for dumped tables
@@ -124,19 +123,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pinjam`
 --
 ALTER TABLE `pinjam`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `simpan`
 --
 ALTER TABLE `simpan`
-  MODIFY `id_simpan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_simpan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

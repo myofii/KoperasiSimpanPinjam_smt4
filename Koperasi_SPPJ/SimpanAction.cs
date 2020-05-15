@@ -31,7 +31,7 @@ namespace Koperasi_SPPJ
 
                 int saldo = 0;
                 var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
-                var cmd = new MySqlCommand("SELECT saldo from user where id_user = " + idu + "", conn);
+                var cmd = new MySqlCommand("SELECT saldo_sp from user where id_user = " + idu + "", conn);
                 conn.Open();
                 var r = cmd.ExecuteReader();
                 if (r.Read())
@@ -40,11 +40,11 @@ namespace Koperasi_SPPJ
                     r.Close();
                 }
                 saldo += jml;
-                var cmd1 = new MySqlCommand("UPDATE user set saldo = " + saldo + " where id_user = " + idu + "", conn);
+                var cmd1 = new MySqlCommand("UPDATE user set saldo_sp = " + saldo + " where id_user = " + idu + "", conn);
                 cmd1.ExecuteNonQuery();
                 var cmd2 = new MySqlCommand("", conn);
                 string query = string.Format("INSERT INTO simpan (id_user, tgl_simpan, jml_simpan, status, saldo) "
-                  + "VALUES ({0}, NOW(), {1}, 'SIMPAN', {2})", new object[] {
+                  + "VALUES ({0}, NOW(), {1}, 'DEBET', {2})", new object[] {
                     idu,
                     jml,
                     saldo
@@ -55,13 +55,13 @@ namespace Koperasi_SPPJ
 
                 sim.load_table();
 
-                MessageBox.Show("Berhasil disimpan!!!");
+                MessageBox.Show("Taken successfully !!");
 
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Inputkan jumlah uang yang ingin disimpan!!");
+                MessageBox.Show("Enter the amount of money you want to save !!");
             }
         }
 

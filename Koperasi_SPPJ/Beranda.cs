@@ -19,15 +19,16 @@ namespace Koperasi_SPPJ
             InitializeComponent();
             idu = id;
             var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
-            var cmd = new MySqlCommand("SELECT * from user where id_user = "+id+"", conn);
+            var cmd = new MySqlCommand("SELECT nama_user, saldo_sp, saldo_pj from user where id_user = "+id+"", conn);
             conn.Open();
 
             var r = cmd.ExecuteReader();
             if (r.HasRows)
             {
                 r.Read();
-                lbNama.Text = "" + r[3];
-                lbSaldo.Text = "Rp." + r[6];
+                lbNama.Text = "" + r[0];
+                lbSaldo_sp.Text = "Rp." + r[1];
+                lbSaldo_pj.Text = "Rp." + r[2];
                 r.Close();
             }
             conn.Close();
@@ -50,6 +51,11 @@ namespace Koperasi_SPPJ
         private void logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Beranda_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

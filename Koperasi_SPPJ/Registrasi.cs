@@ -67,5 +67,10 @@ namespace Koperasi_SPPJ
         {
             txtPassword.PasswordChar = '*';
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

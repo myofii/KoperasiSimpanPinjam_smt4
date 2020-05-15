@@ -24,7 +24,7 @@ namespace Koperasi_SPPJ
         public void load_table()
         {
             var conn = new MySqlConnection("Host=localhost;Uid=root;Pwd=;Database=koperasi_sppj");
-            var cmd = new MySqlCommand("SELECT status, tgl_pinjam, jml_pinjam, saldo from pinjam where id_user = " + idu + "", conn);
+            var cmd = new MySqlCommand("SELECT status AS Status, tgl_pinjam AS Date, jml_pinjam AS Amount, saldo AS Saldo from pinjam where id_user = " + idu + "", conn);
 
             try
             {
